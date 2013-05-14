@@ -18,7 +18,8 @@ module.exports = function (grunt) {
     mochacli: {
       options: {
         require: ['chai'],
-        ui: 'tdd'
+        ui: 'tdd',
+        run: true
       },
       all: ['test/node.js']
     },
@@ -26,8 +27,7 @@ module.exports = function (grunt) {
     mocha: {
       all: {
         src: ['test/browser/index.html'],
-        mocha: {},
-        run: false
+        mocha: {}
       }
     },
 

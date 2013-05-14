@@ -17,8 +17,12 @@
     });
   </script>
   <script src="../../lib/naive.js"></script>
+  <script src="../tests.js"></script>
   <script>
-    mocha.run();
+    module.exports(SubArray, suite, test, assert);
+    if (!window.PHANTOMJS) {
+      mocha.run();
+    }
   </script>
 </body>
 </html>
