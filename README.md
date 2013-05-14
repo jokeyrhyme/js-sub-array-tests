@@ -20,9 +20,19 @@ In the project root, run:
 
 That will install the npm modules required for running the unit tests.
 
-Once that's done, you can run the unit tests with:
+Once that's done, you can run the Node.JS unit tests with:
 
     grunt
+
+or:
+
+    grunt test
+
+Additionally, you may run the browser-based tests with:
+
+    grunt browser
+
+although these tests are more interesting if actually opened in real browsers.
 
 ## Documentation
 _(Coming soon)_

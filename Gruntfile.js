@@ -20,7 +20,15 @@ module.exports = function (grunt) {
         require: ['chai'],
         ui: 'tdd'
       },
-      all: ['test/*.js']
+      all: ['test/node.js']
+    },
+
+    mocha: {
+      all: {
+        src: ['test/browser/index.html'],
+        mocha: {},
+        run: false
+      }
     },
 
     watch: {
@@ -33,9 +41,11 @@ module.exports = function (grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-jslint');
+  grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-mocha-cli');
 
   grunt.registerTask('test', ['jslint', 'mochacli']);
+  grunt.registerTask('browser', ['mocha']);
 
   // Default task.
   grunt.registerTask('default', ['test']);
