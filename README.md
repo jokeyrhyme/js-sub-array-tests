@@ -72,6 +72,12 @@ It isn't surprising the Chrome repeats the Node.JS results, as they both use V8.
 Firefox's JavaScript engine is a modern ECMAScript 5.1 engine, just like V8.
 I'm starting to sense a pattern here.
 
+### Internet Explorer
+
+- browser tests run in Microsoft Internet Explorer 10
+
+- same results as the others
+
 ## License
 Copyright (c) 2013 Ron Waldon  
 Licensed under the MIT license.
