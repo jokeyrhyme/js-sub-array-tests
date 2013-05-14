@@ -87,6 +87,21 @@ module.exports = function (SubArray, suite, test, assert) {
               assert.equal(subArray.length, 1);
               assert.equal(subArray[0], 'last');
             });
+
+            test('add an element by direct index', function () {
+              subArray[0] = 'abc';
+              assert.equal(subArray.length, 1, 'length is updated');
+              assert.equal(subArray[0], 'abc', 'element was stored/retrieved');
+              assert.equal(subArray.last(), 'abc', '"last" finds element');
+            });
+
+            test('add an element by higher direct index', function () {
+              subArray[2] = 'abc';
+              assert.equal(subArray.length, 3, 'length is updated');
+              assert(!subArray[1], 'skipped index is falsey');
+              assert.equal(subArray[2], 'abc', 'element was stored/retrieved');
+              assert.equal(subArray.last(), 'abc', '"last" finds element');
+            });
           });
         });
     }

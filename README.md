@@ -42,12 +42,15 @@ really work that well in Node.JS, so grab a browser.
 
 - `grunt test` with Node.JS v0.10.5
 
-                | proper [[Class]] | length/indices
---------------- | ---------------- | ---------
-naive           | no               | yes
-stack           | no               | yes
-makeSubArray    | no               | yes
-wrapper: direct | yes              | yes
+- tests confirm Array-detectability, if manipulating length effects indices as
+expected, and if manipulating indices effects length as expected
+
+                | proper [[Class]] | length > indices | indices > length
+--------------- | ---------------- | ---------------- | -----------
+naive           | no               | yes              | no
+stack           | no               | yes              | no
+makeSubArray    | no               | yes              | yes
+wrapper: direct | yes              | yes              | yes
 
 This is quite different to @kangax's [original results](http://perfectionkills.com/how-ecmascript-5-still-does-not-allow-to-subclass-an-array/#summary).
 I can only guess that V8 does things differently compared to the browser JavaScript engines that were used in the original comparision.
