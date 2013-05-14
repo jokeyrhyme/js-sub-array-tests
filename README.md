@@ -33,10 +33,14 @@ Additionally, you may run the browser-based tests with:
     grunt browser
 
 although these tests are more interesting if actually opened in real browsers.
+In fact, the PhantomJS + Mocha combination for these browser tests doesn't
+really work that well in Node.JS, so grab a browser.
 
 ## Results
 
-In Node.JS 0.10.5:
+### Node.JS
+
+- `grunt test` with Node.JS v0.10.5
 
                 | proper [[Class]] | length/indices
 --------------- | ---------------- | ---------
@@ -47,6 +51,23 @@ wrapper: direct | yes              | yes
 
 This is quite different to @kangax's [original results](http://perfectionkills.com/how-ecmascript-5-still-does-not-allow-to-subclass-an-array/#summary).
 I can only guess that V8 does things differently compared to the browser JavaScript engines that were used in the original comparision.
+
+### Google Chrome
+
+- browser tests run in Chromium 26
+
+- same results as Node.JS
+
+It isn't surprising the Chrome repeats the Node.JS results, as they both use V8.
+
+### Mozilla Firefox
+
+- browser tests run in Firefox 20
+
+- same results as Node.JS
+
+Firefox's JavaScript engine is a modern ECMAScript 5.1 engine, just like V8.
+I'm starting to sense a pattern here.
 
 ## License
 Copyright (c) 2013 Ron Waldon  
