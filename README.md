@@ -34,14 +34,19 @@ Additionally, you may run the browser-based tests with:
 
 although these tests are more interesting if actually opened in real browsers.
 
-## Documentation
-_(Coming soon)_
+## Results
 
-## Examples
-_(Coming soon)_
+In Node.JS 0.10.5:
 
-## Release History
-_(Nothing yet)_
+                | proper [[Class]] | length/indices
+--------------- | ---------------- | ---------
+naive           | no               | yes
+stack           | no               | yes
+makeSubArray    | no               | yes
+wrapper: direct | yes              | yes
+
+This is quite different to @kangax's [original results](http://perfectionkills.com/how-ecmascript-5-still-does-not-allow-to-subclass-an-array/#summary).
+I can only guess that V8 does things differently compared to the browser JavaScript engines that were used in the original comparision.
 
 ## License
 Copyright (c) 2013 Ron Waldon  
